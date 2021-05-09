@@ -1,6 +1,6 @@
 # coverage-360
 
-**Scena 360's end-to-end testing setup.**
+**Scena 360's end-to-end (E2E) testing setup.**
 
 ---
 
@@ -19,17 +19,17 @@
 ## Use cases
 
 - Learn how to write tests that modify entities programmatically and visually inspect them
-- Test VR interactions when you don't have a headset
-- Set up e2e tests and a CI pipeline for your A-frame projects
+- Test VR interactions like hand-controls when you don't have a headset with you
+- Set up E2E tests and a CI pipeline for your A-frame projects
 - Use this repository for inspiration and make your A-frame projects more reliable!
-- Automate and run e2e tests in the cloud using [Github Actions](https://github.com/features/actions)
+- Automate and run E2E tests in the cloud using [Github Actions](https://github.com/features/actions)
 
 ## Running the Example
 
 1. Make sure that you have the latest stable version of [Yarn](https://yarnpkg.com/) and [Node.JS](https://nodejs.org/en/) installed
 
 2. Run `yarn intsall`
-3. Run `yarn test:e2e` to run the example e2e test suite (`e2e/example.test.js`)
+3. Run `yarn test:e2e` to run the example E2E test suite (`e2e/example.test.js`)
 
 ## File Structure
 
