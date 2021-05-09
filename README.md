@@ -36,7 +36,7 @@
 |_ .github
   |_ workflows/ # the Github Action configuration
 |_ e2e
-  |_ helpers # helper functions for doing puppeteer and A-frame relating operations
+  |_ helpers # helpers/utilties for testing, querying/manipulating entities elements, etc.
   |_ example.test.js # example test suite
   |_ jest.config.js # Jest configuration
 |_ .babelrc # Babel configuration so that imports/exports work
