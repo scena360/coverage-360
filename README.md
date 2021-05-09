@@ -18,8 +18,9 @@
 
 ## Use cases
 
-- Learn how to modify entities programmatically, and then visually inspect them
-- Set up e2e tests for your A-frame
+- Learn how to write tests that modify entities programmatically and visually inspect them
+- Test VR interactions when you don't have a headset
+- Set up e2e tests and a CI pipeline for your A-frame projects
 - Use this repository for inspiration and make your A-frame projects more reliable!
 - Automate and run e2e tests in the cloud using [Github Actions](https://github.com/features/actions)
 
