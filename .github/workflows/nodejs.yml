@@ -1,0 +1,32 @@
+name: Node CI
+
+on: [push]
+
+# inspo from https://github.com/checkly/headless-recorder/blob/0cd739e1680dfd1db120de55deda4d4ed33094de/.github/workflows/lint-build-test.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: E2E Tests - Puppeteer Headful
+        uses: mujo-code/puppeteer-headful@master
+        env:
+          CI: "true"
+        with:
+          args: yarn run test:e2e --maxWorkers=2 --ci
+    timeout-minutes: 15
