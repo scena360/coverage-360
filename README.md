@@ -31,6 +31,31 @@
 2. Run `yarn intsall`
 3. Run `yarn test:e2e` to run the example E2E test suite (`e2e/example.test.js`)
 
+## Preview 
+
+### Sample test cases from `e2e/example.test.js`
+
+```javascript
+it("loads a yellow cylinder", async () => {
+  const color = await getShapeColor(page1, "a-cylinder");
+  expect(color).toStrictEqual("#FFC65D");
+});
+
+it("animated entity reaches final height", async () => {
+  const animatedBoxLoaded = await waitForEntityLoaded(page1, "#animated-box");
+  expect(animatedBoxLoaded).toStrictEqual(true);
+
+  await sleep(3000); // sleep for `dur` amount of ms
+  const animatedBoxPosition = await page1.evaluate(() =>
+    document.querySelector("#animated-box").getAttribute("position")
+  );
+
+  expect(animatedBoxPosition.x).toStrictEqual(0);
+  expect(animatedBoxPosition.y).toStrictEqual(3);
+  expect(animatedBoxPosition.z).toStrictEqual(-4);
+});
+```
+
 ## File Structure
 
 ```
